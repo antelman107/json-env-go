@@ -1,5 +1,5 @@
 # What is it?
-GO package to deal with complex configs provided through environment variables.
+Tiny (1 line) GO package to deal with complex configs provided through environment variables.
 
 # Why we need it?
 In dockerized applications and by https://12factor.net/ recommendation
@@ -47,7 +47,7 @@ Running program example:
 
 ```bash
 
-CONFIG={"nodes":[{"url":"http:\/\/1.localhost\/","priority":1,"enabled":true},{"url":"http:\/\/2.localhost\/","priority":2,"enabled":false}]} ./app
+CONFIG='{"nodes":[{"url":"http:\/\/1.localhost\/","priority":1,"enabled":true},{"url":"http:\/\/2.localhost\/","priority":2,"enabled":false}]}' ./app
 ```
 
 Program code example:
