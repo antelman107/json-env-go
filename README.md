@@ -60,7 +60,7 @@ type Config struct {
 
 func main() {
       var cfg Config
-      if err := jsonEnvGo.DecodeConfigFromEnv(envName, &cfg); err != nil {
+      if err := jsonEnvGo.DecodeConfigFromEnv("CONFIG", &cfg); err != nil {
             logger.Error(err)
             return
       }
@@ -69,5 +69,7 @@ func main() {
       // ...
 }
 ```
+
+This package is very tiny, it can be used instead of viper (https://github.com/spf13/viper) when working especially with json configs coming from environment variables.
 
 
