@@ -17,8 +17,7 @@ It is easy if configuration consists of simple values (strings, numbers, boolean
 
 In this case we could use several environment variables like  `APP_LOGIN="user" APP_PASSWORD="somepass"`.
 
-But how do we work for complex configuration 
-that consists of arrays of objects? For example:
+But how would we work with complex configuration that, for example, consists of arrays of objects? For example:
 ```json
 {
       "nodes":[
@@ -36,25 +35,22 @@ that consists of arrays of objects? For example:
 }
 ```
 
-It is difficult to split this configuration to several environment variables.
-
 This package is aimed to deal with such configs.
-
 Just put the config into single environment variable.
-It could be multiline, but work with single line is simplier.
+It could be multiline, but work with single line is simplier from `bash`.
 
-Running program example:
+Running program `bash` example:
 
 ```bash
 
 CONFIG='{"nodes":[{"url":"http:\/\/1.localhost\/","priority":1,"enabled":true},{"url":"http:\/\/2.localhost\/","priority":2,"enabled":false}]}' ./app
 ```
 
-Program code example:
+GO program code example:
 ```GO
 import jsonEnvGo "github.com/antelman107/json-env-go"
 
-type Config  struct {
+type Config struct {
 	Nodes []struct {
 		URL      string `json:"url"`
 		Priority int    `json:"priority"`
